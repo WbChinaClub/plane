@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/dafeiji.css" />
+    <script src="js/GameEngine.js"></script>
+    <script src="js/MyPlane.js"></script>
+    <script src="js/Bullet.js"></script>
+    <script src="js/Enemy.js"></script>
+    <script src="js/common.js"></script>
+
+    <script>
+
+        onload = function(){
+//				var oList = document.getElementById("list")
+//				var aLi = document.getElementsByTagName("li");
+//
+//				for (var i=0; i<aLi.length; i++){
+//					//点击事件
+//					aLi[i].onclick = function(){
+//
+//
+//						//清除ul
+//						oList.parentNode.removeChild(oList);
+//
+//						//游戏引擎：
+//						//主要控制游戏进度
+//						//监听键盘：左，右
+//						//碰撞检测：用定时器一直检测(判断是否有子弹和敌机碰撞)
+//						//创建敌机：随机创建
+//
+//						//角色（对象/类）
+//						//我的飞机：对象
+//						//子弹：类(构造函数)
+//						//敌机：类(构造函数)
+//
+//						//游戏难度(子弹发射间隔)
+//						var fireInterval = this.value;
+//						myPlane.fireInterval = fireInterval - 0;
+//
+//						//开始游戏
+//						gameEngine.init().start();
+//
+//					}
+//				}
+            /*
+             测试enemy
+             gameEngine.init();
+             var a = new Enemy(3);
+             a.move();
+             setTimeout(function () {
+             a.boom();
+             },1000)
+             */
+            /*
+
+
+             gameEngine.init();
+             var myplane = new MyPlane(10);
+             document.onkeydown = function (evt) {
+             var e = evt || window.event;
+             var code = e.keyCode;
+             if(code == 37){
+             myplane.move(-10);
+             myplane.boom();
+             }else if(code==39){
+             myplane.move(10);
+             }
+             }
+             document.onkeyup = function () {
+             myplane.stop();
+             }
+             */
+            /*
+             测试子弹
+             gameEngine.init();
+             var myplane = new MyPlane(50);
+             myplane.autofire();
+             document.onkeydown = function (evt) {
+             var e = evt || window.event;
+             var code = e.keyCode;
+             if(code == 37){
+             myplane.move(-10);
+             }else if(code==39){
+             myplane.move(10);
+             }
+             }
+             document.onkeyup = function () {
+             myplane.stop();
+             }
+             */
+//             console.log(gameEngine);
+            /*
+             游戏引擎启动
+             */
+            var list = document.getElementById("list");
+            var lis = document.querySelectorAll("#list li");
+            var interval = 0;
+            for(var i=0;i<lis.length;i++){//对于游戏难度进行选择，选择完毕以后，进入游戏，移除当前的所有li
+                lis[i].onclick = function () {
+                    interval = this.value;
+                    list.parentNode.removeChild(list);
+                    gameEngine.interval = interval;//确定子弹间隙
+                    gameEngine.start();//游戏引擎启动
+                }
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<div id="body_main" class="main">
+    <div id="score">0</div>
+    <ul id="list">
+        <li value="1000">超级困难</li>
+        <li value="500">非常困难</li>
+        <li value="150">比较困难</li>
+        <li value="50">春哥附体</li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/dafeiji.css" />
+		<script src="js/GameEngine.js"></script>
+		<script src="js/MyPlane.js"></script>
+		<script src="js/Bullet.js"></script>
+		<script src="js/Enemy.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			onload = function(){
+                /*
+                游戏引擎启动
+                 */
+               var list = document.getElementById("list");
+               var lis = document.querySelectorAll("#list li");
+               var whitef=document.getElementById("white-float");
+               var interval = 0;
+               for(var i=0;i<lis.length;i++){//对于游戏难度进行选择，选择完毕以后，进入游戏，移除当前的所有li
+                   lis[i].onclick = function () {
+                       interval = this.value;
+                       list.parentNode.removeChild(list);
+                       gameEngine.interval = interval;//确定子弹间隙
+                       gameEngine.start();
+                       //游戏引擎启动
+                    //    if(whitef.style.display=="block"){
+                    //    	 lis[i].onclick();
+                    // }
+                }
+            }
+        }
+		</script>
+	</head>
+	<body>
+		<div id="body_main" class="main">
+			<span>分数:</span><div id="score">0</div>
+			<ul id="list">
+				<li value="1000">超级困难</li>
+				<li value="500">非常困难</li>
+				<li value="150">比较困难</li>
+				<li value="50">春哥附体</li>
+			</ul>
+			<div id="white-float">
+				
+				<div id="tax">
+					<div id="head">分数榜</div>
+					<p>历史最高分数：</p>
+					<div id="max-score" class="show"></div>
+					<p>本局分数：</p>
+					<div id="current-score" class="show"></div>
+					<div id="btn">继续</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

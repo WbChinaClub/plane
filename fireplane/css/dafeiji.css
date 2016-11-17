@@ -1,0 +1,178 @@
+
+
+*{margin: 0; padding: 0; border: none;}
+html,body{width: 100%; height: 100%; overflow: hidden;} 
+ul,li{list-style: none;}
+a{text-decoration: none;}
+
+/************************************/
+/*菜单*/
+.main{
+	width: 480px;
+	height: 100%;
+	background: url(../images/bg.jpg) repeat-y;
+	margin: auto;
+}
+.main #score{
+    width:100px;
+    height:40px;
+    color:#555;
+    position: absolute;
+    left:600px;
+    top:0px;
+    font-size:20px;
+}
+.main #list{
+	width: 200px;
+	height: 300px;
+	margin: auto;
+	position: absolute;
+	left: 0; right: 100px;top: 10%;
+}
+
+.main #list li{
+	width: 198px;
+	height: 75px;
+	background: #f40;
+	color: white;
+	font-size: 25px;
+	font-family: "微软雅黑";
+	line-height: 75px;
+	text-align: center;
+	border-radius:5px;
+	border: 1px solid black;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+/****************************/
+/*加载页面*/
+.logo{
+	width: 428px;
+	height: 104px;
+	margin: auto;
+	background: url(../images/logo.png) no-repeat;
+	position: absolute;
+	left: 0; right: 0;top: 25%;
+}
+
+.loading{
+	width: 200px;
+	height: 40px;
+	background: url(../images/loading1.png) no-repeat;
+	margin: auto;
+	position: absolute;
+	left: 0;right: 0;top: 60%;
+}
+
+
+/***********************************************/
+/*游戏界面*/
+/*我的飞机*/
+.myplane{
+	width: 98px;
+	height: 122px;
+	background: url(../images/me.png) no-repeat;
+	position: absolute;
+}
+
+/*子弹*/
+.bullet{
+	width: 7px;
+	height: 18px;
+	background: url(../images/bullet.png) no-repeat;
+	position: absolute;
+}
+
+/*子弹销毁*/
+.bullet-die{
+	width: 40px;
+	height: 43px;
+	background: url(../images/die1.png) no-repeat;
+	position: absolute;
+}
+
+/*小型敌机*/
+.enemy-small{
+	width: 59px;
+	height: 36px;
+	background: url(../images/plane1.png) no-repeat;
+	position: absolute;
+}
+
+/*中型敌机*/
+.enemy-middle{
+	width: 70px;
+	height: 92px;
+	background: url(../images/plane2.png) no-repeat;
+	position: absolute;
+}
+
+/*大型敌机*/
+.enemy-large{
+	width: 165px;
+	height: 256px;
+	background: url(../images/plane3.png) no-repeat;
+	position: absolute;
+}
+#white-float{
+	width:100%;
+	height:100%;
+	display:none;
+	position:relative;
+	z-index:10;
+}
+#tax{
+	width:300px;
+	height: 250px;
+	background:#999;
+	border-radius:5px;
+	position:absolute;
+	left:17%;
+	top:300px;
+	box-shadow: 2px 2px 5px 3px #999;
+	opacity:1;
+}
+#head{
+	width:100%;
+	height:40px;
+	background:#666;
+	text-align:center;
+	line-height:40px;
+	font-size:30px;
+	font-weight: 800;
+}
+p{
+	width:100%;
+	height:30px;
+	color:#666;
+	text-align:center;
+	line-height:30px;
+	font-weight: 800;
+}
+.show{
+	width:200px;
+	height:40px;
+	background:#a87;
+	color:#654;
+	text-align:center;
+	line-height:40px;
+	margin:0 auto;
+	border:3px solid #c5a;
+	border-radius:10px;
+}
+#btn{
+
+	width:100px;
+	height:30px;
+	background:#333;
+	text-align:center;
+	line-height:30px;
+	margin:0 auto;
+	border:3px solid #111;
+	border-radius:10px;
+	font-weight: 800;
+	font-size:20px;
+    margin-top:10px;
+    cursor:pointer;
+}
